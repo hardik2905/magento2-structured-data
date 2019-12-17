@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+ * Mamis.IT
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is available through the world-wide-web at this URL:
+ * http://www.mamis.com.au/licencing
+ *
+ * @category   Mamis StructuredData
+ * @copyright  Copyright (c) 2016 Mamis.IT Pty Ltd (http://www.mamis.com.au)
+ * @author     Matthew Muscat <matthew@mamis.com.au>
+ * @license    http://www.mamis.com.au/licencing
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Mamis_StructuredData::mamis_structured_data" title="Mamis StructuredData" sortOrder="20" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

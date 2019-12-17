@@ -1,0 +1,19 @@
+<?php if(count($block->getBreadcrumbs()) > 0): ?>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        <?php $count = count($block->getBreadcrumbs()); $i = 0; ?>
+        <?php foreach($block->getBreadcrumbs() as $type => $breadCrumb): $i++; ?>
+        {
+            "@type": "ListItem",
+            "position": <?php echo $i ?>,
+            "name": "<?php echo $block->escapeQuote($block->stripTags($breadCrumb['label'])) ?>",
+            "item": "<?php echo $breadCrumb['link'] ?>"
+        } <?php if ($i < $count) echo ','; ?>
+        <?php endforeach; ?>
+    ]
+}
+</script>
+<?php endif; ?>

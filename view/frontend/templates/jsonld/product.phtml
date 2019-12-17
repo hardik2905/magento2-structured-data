@@ -1,0 +1,40 @@
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "<?php echo $block->escapeQuote($block->stripTags($block->getProduct()->getName())) ?>",
+    "image": "<?php echo $block->getImage($block->getProduct(), 'product_base_image')->getImageUrl() ?>",
+    "description": "<?php echo $block->escapeQuote($block->stripTags($block->getProduct()->getShortDescription())) ?>",
+    "sku": "<?php echo $block->escapeQuote($block->stripTags($block->getProduct()->getSku())) ?>"
+    <?php if (!empty($block->getReviewsCount())): ?>
+    ,
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "89",
+        "ratingValue": "<?php echo $block->getReviewsRating(); ?>",
+        "reviewCount": "<?php echo $block->getReviewsCount(); ?>",
+        "itemReviewed": {
+            "@type": "Thing",
+            "name": "<?php echo $block->escapeQuote($block->stripTags($block->getProduct()->getName())) ?>"
+        }
+    }
+    <?php endif; ?>
+    <?php if (!empty($block->getOffers())): ?>
+    ,
+    "offers": [
+        <?php $count = count($block->getOffers()); $i = 0; ?>
+        <?php foreach($block->getOffers() as $offer): $i++ ?>
+        {
+            "@type": "Offer",
+            "url": "<?php echo $offer['url'] ?>",
+            "priceCurrency": "<?php echo $offer['currency'] ?>",
+            "price": "<?php echo $offer['price'] ?>",
+            "itemCondition": "<?php echo $offer['itemcondition'] ?>",
+            "availability": "<?php echo $offer['availability'] ?>"
+        } <?php if ($i != $count) echo ','; ?>
+        <?php endforeach; ?>
+    ]
+    <?php endif; ?>
+}
+</script>

@@ -1,0 +1,20 @@
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "<?php echo $block->getName() ?>",
+    "url": "<?php echo $block->getStoreUrl() ?>",
+    "logo": "<?php echo $block->getStoreLogoUrl() ?>",
+    <?php if (!empty($block->getSocialLinks())): ?>
+    "sameAs": <?php echo json_encode($block->getSocialLinks()) ?>,
+    <?php endif; ?>
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "<?php echo $block->escapeQuote($block->stripTags($block->getAddress())) ?>",
+        "addressLocality": "<?php echo $block->getLocality() ?>",
+        "addressRegion": "<?php echo $block->getRegion() ?>",
+        "postalCode": "<?php echo $block->getPostcode() ?>",
+        "addressCountry": "<?php echo $block->getCountry() ?>"
+    }
+}
+</script>

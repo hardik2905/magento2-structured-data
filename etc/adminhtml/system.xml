@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+ * Mamis.IT
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is available through the world-wide-web at this URL:
+ * http://www.mamis.com.au/licencing
+ *
+ * @category   Mamis StructuredData
+ * @copyright  Copyright (c) 2016 Mamis.IT Pty Ltd (http://www.mamis.com.au)
+ * @author     Matthew Muscat <matthew@mamis.com.au>
+ * @license    http://www.mamis.com.au/licencing
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mamis_extensions" translate="label" sortOrder="10">
+            <label>Mamis</label>
+        </tab>
+        <section id="mamis_structured_data" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Structured Data</label>
+            <tab>mamis_extensions</tab>
+            <resource>Mamis_StructuredData::structured_data</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="facebook" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Facebook URL</label>
+                </field>
+                <field id="youtube" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>YouTube URL</label>
+                </field>
+                <field id="pinterest" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Pinterest URL</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
