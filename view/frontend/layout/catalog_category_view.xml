@@ -16,7 +16,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="head.additional">
-            <block class="Mamis\StructuredData\Block\Breadcrumb" name="breadcrumbs.json.ld" as="breadcrumbs.json.ld" template="Mamis_StructuredData::jsonld/breadcrumbs.phtml" />
+            <block class="Mamis\StructuredData\Block\Breadcrumb" name="breadcrumbs.json.ld" as="breadcrumbs.json.ld" template="Mamis_StructuredData::jsonld/breadcrumbs.phtml" ifconfig="mamis_structured_data/general/active" />
         </referenceBlock>
     </body>
 </page>

@@ -16,7 +16,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="head.additional">
-            <block class="Mamis\StructuredData\Block\Organization" name="organization.json.ld" as="organization.json.ld" before="-" template="Mamis_StructuredData::jsonld/organization.phtml" />
+            <block class="Mamis\StructuredData\Block\Organization" name="organization.json.ld" as="organization.json.ld" before="-" template="Mamis_StructuredData::jsonld/organization.phtml" ifconfig="mamis_structured_data/general/active" />
         </referenceBlock>
     </body>
 </page>
